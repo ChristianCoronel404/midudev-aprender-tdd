@@ -13,5 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Hello World"
+      - name: 'Hello World'
         run: echo "Hello World"
+      - name: Dime la fecha
+        run: date
+      - name: Muestra el contenido del directorio
+        run: ls -la
