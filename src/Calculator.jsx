@@ -1,30 +1,30 @@
-import { useState } from "react";
-import { evaluate } from "mathjs";
+import { useState } from 'react'
+import { evaluate } from 'mathjs'
 
-export const operations = ["+", "-", "*", "/"];
-const equalSign = "=";
+export const operations = ['+', '-', '*', '/']
+const equalSign = '='
 
 export const rows = [
   [7, 8, 9],
   [4, 5, 6],
   [1, 2, 3],
-  [0],
-];
+  [0]
+]
 
 export const Calculator = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('')
 
   const createHandleClick = (op) => () =>
-    setValue((prev) => prev.concat(String(op)));
+    setValue((prev) => prev.concat(String(op)))
 
   const handleEvaluate = () => {
     try {
-      const result = evaluate(value);
-      setValue(String(result));
+      const result = evaluate(value)
+      setValue(String(result))
     } catch (error) {
-      setValue("Error");
+      setValue('Error')
     }
-  };
+  }
 
   return (
     <div>
@@ -32,9 +32,9 @@ export const Calculator = () => {
 
       <input value={value} readOnly />
 
-      <div role="grid">
+      <div role='grid'>
         {rows.map((row, idx) => (
-          <div key={idx} role="row">
+          <div key={idx} role='row'>
             {row.map((number) => (
               <button
                 key={number}
@@ -60,5 +60,5 @@ export const Calculator = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
