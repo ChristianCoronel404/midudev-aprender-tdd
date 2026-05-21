@@ -27,3 +27,4 @@ jobs:
       - run: npm ci -- legacy-peer-deps --no-fund --no-audit
       - run: npm run lint
       - run: npm run build
+      - run: npm run test
