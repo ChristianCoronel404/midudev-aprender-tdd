@@ -6,6 +6,8 @@ name: Lo que queramos
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   platzi:
@@ -25,3 +27,4 @@ jobs:
       - run: npm ci -- legacy-peer-deps --no-fund --no-audit
       - run: npm run lint
       - run: npm run build
+      - run: npm run test
